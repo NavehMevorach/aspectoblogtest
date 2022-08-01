@@ -16,13 +16,13 @@ We will start with creating a simple to-do app that uses Mongo and the Gin frame
 
 ## What to Expect
 
-- [Intro to OpenTelemetry](https://www.aspecto.io/blog/opentelemetry-go-getting-started/#Intro-to-OpenTelemetry)
-- [Hello world: OpenTelemetry GO example](https://www.aspecto.io/blog/opentelemetry-go-getting-started/#Hello-world-OpenTelemetry-Go-example)
-  - [Create main.go file with Gin and Mongo](https://www.aspecto.io/blog/opentelemetry-go-getting-started/#Create-main-go-file-for-our-to-do-app)
-  - [Install OpenTelemetry GO](https://www.aspecto.io/blog/opentelemetry-go-getting-started/#Install-OpenTelemetry-Go)
-  - [Gin instrumentation: gin.Context](https://www.aspecto.io/blog/opentelemetry-go-getting-started/#Gin-instrumentation-gin-Context)
-- [Visualization with Jaeger](https://www.aspecto.io/blog/opentelemetry-go-getting-started/#Visualization-with-Jaeger-and-Aspecto)
-  - [OpenTelemetry Go and Jaeger Tracing](https://www.aspecto.io/blog/opentelemetry-go-getting-started/#OpenTelemetry-Go-and-Jaeger-Tracing-Export-traces-to-Jaeger)
+- Intro to OpenTelemetry
+- Hello world: OpenTelemetry GO example
+  - Create main.go file with Gin and Mongo
+  - Install OpenTelemetry GO
+  - Gin instrumentation: gin.Context
+- Visualization with Jaeger
+  - OpenTelemetry Go and Jaeger Tracing
 
 ## Intro to OpenTelemetry
 
@@ -375,9 +375,11 @@ To learn more about it, check out our OpenTelemetry Bootcamp. It’s a 6 episode
 Follow these guides below, if you want to install OpenTelemetry in more officially supported languages:
 
 [Python](https://www.aspecto.io/blog/getting-started-with-opentelemetry-python/)
+
 [Java](https://www.aspecto.io/blog/getting-started-with-opentelemetry-java/)
+
 [Node](https://www.aspecto.io/blog/getting-started-with-opentelemetry-node/)
 
-_A version of this article was [originally posted]() on the Aspecto blog._
+_A version of this article was [originally posted][] on the Aspecto blog._
 
 [originally posted]: {{% param canonical_url %}}

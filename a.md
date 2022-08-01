@@ -49,9 +49,9 @@ node as the APISIX and enabled the [OTLP HTTP Receiver](https://github.com/open-
 
 > Need help completing deployment of the OpenTelemetry Collector?
 > See the scenario [Example](#example) below.
-The default port of the OTLP HTTP Receiver is `4318`, and the address of the
-`collector` is the HTTP Receiver address of the OpenTelemetry Collector. For
-related fields, see the [Apache APISIX documentation](https://apisix.apache.org/docs/apisix/next/plugins/opentelemetry/).
+> The default port of the OTLP HTTP Receiver is `4318`, and the address of the
+> `collector` is the HTTP Receiver address of the OpenTelemetry Collector. For
+> related fields, see the [Apache APISIX documentation](https://apisix.apache.org/docs/apisix/next/plugins/opentelemetry/).
 
 A typical configuration might look like this:
 
@@ -174,8 +174,7 @@ displayed in the Tags list: `http_x-custom-ot-key` and `route_id`.
 You need to note that the `additional_attributes` configuration is set to take
 values from Apache APISIX and Nginx variables as `attribute` values, so
 `additional_attributes` must be a valid Apache APISIX or Nginx variable. It also
-includes HTTP Header, but when fetching http_header, you need to add `http_` as
-the prefix of the variable name. If the variable does not exist, the `tag` will
+includes HTTP Header, but when fetching http*header, you need to add `http*`as the prefix of the variable name. If the variable does not exist, the`tag` will
 not be displayed.
 
 ## Example
@@ -259,7 +258,7 @@ receivers:
 otlp:
   protocols:
     grpc:
-    http: ${ip:port}   # add OTLP HTTP Receiver，default port is 4318
+    http: ${ip:port} # add OTLP HTTP Receiver，default port is 4318
 ```
 
 Modify `docker-compose.yaml` file.
@@ -272,34 +271,34 @@ The following example is the complete `docker-compose.yaml` after the
 configuration is modified:
 
 ```yaml
-version: "2"
+version: '2'
 services:
   # Jaeger
   jaeger-all-in-one:
     image: jaegertracing/all-in-one:latest
     ports:
-      - "16686:16686" # jaeger ui port
-      - "14268"
-      - "14250"
+      - '16686:16686' # jaeger ui port
+      - '14268'
+      - '14250'
   # Zipkin
   zipkin-all-in-one:
     image: openzipkin/zipkin:latest
     ports:
-      - "9411:9411"
+      - '9411:9411'
   # Collector
   otel-collector:
     image: ${OTELCOL_IMG}
-    command: ["--config=/etc/otel-collector-config.yaml", "${OTELCOL_ARGS}"]
+    command: ['--config=/etc/otel-collector-config.yaml', '${OTELCOL_ARGS}']
     volumes:
       - ./otel-collector-config.yaml:/etc/otel-collector-config.yaml
     ports:
-      - "1888:1888"   # pprof extension
-      - "8888:8888"   # Prometheus metrics exposed by the collector
-      - "8889:8889"   # Prometheus exporter metrics
-      - "13133:13133" # health_check extension
-      - "4317"        # OTLP gRPC receiver
-      - "4318:4318"   # Add OTLP HTTP Receiver port mapping
-      - "55670:55679" # zpages extension
+      - '1888:1888' # pprof extension
+      - '8888:8888' # Prometheus metrics exposed by the collector
+      - '8889:8889' # Prometheus exporter metrics
+      - '13133:13133' # health_check extension
+      - '4317' # OTLP gRPC receiver
+      - '4318:4318' # Add OTLP HTTP Receiver port mapping
+      - '55670:55679' # zpages extension
     depends_on:
       - jaeger-all-in-one
       - zipkin-all-in-one
@@ -319,7 +318,7 @@ services:
     environment:
       - OTEL_EXPORTER_OTLP_ENDPOINT=otel-collector:4317
     ports:
-      - "7080:7080" # Map the Server port to the host
+      - '7080:7080' # Map the Server port to the host
     depends_on:
       - otel-collector
   prometheus:
@@ -328,8 +327,8 @@ services:
     volumes:
       - ./prometheus.yaml:/etc/prometheus/prometheus.yml
     ports:
-      - "9090:9090"
-  ```
+      - '9090:9090'
+```
 
 It should be noted that `demo-client.environment.DEMO_SERVER_ENDPOINT` needs to
 be changed to your Apache APISIX address, and ensure that it can be accessed
@@ -385,4 +384,4 @@ on GitHub, or communicate via the [mailing list](https://apisix.apache.org/docs/
 
 _A version of this article was [originally posted][] on the Apache APISIX blog._
 
-[originally posted]: {{% param canonical_url %}}
+<!-- [originally posted]: {{% param canonical_url %}} -->

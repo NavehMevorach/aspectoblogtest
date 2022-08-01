@@ -3,10 +3,12 @@ title: How to Get Started with OpenTelemetry Go
 linkTitle: Get Started with OpenTelemetry & Go
 date: 2022-06-27
 author: Team Aspecto
-canonical_url: https://https://www.aspecto.io/blog/opentelemetry-go-getting-started/
+canonical_url: https://www.aspecto.io/blog/opentelemetry-go-getting-started/
 ---
 
 # How to Get Started with OpenTelemetry Go
+
+!["OpenTelemetry Go The Mandalorian"](https://www.aspecto.io/wp-content/uploads/2022/06/OpenTelemetry-Go-The-Mandalorian-2048x1406.png)
 
 In this guide, you will learn hands-on how to create and visualize traces with OpenTelemetry Go without prior knowledge.
 
@@ -19,9 +21,8 @@ We will start with creating a simple to-do app that uses Mongo and the Gin frame
   - [Create main.go file with Gin and Mongo](https://www.aspecto.io/blog/opentelemetry-go-getting-started/#Create-main-go-file-for-our-to-do-app)
   - [Install OpenTelemetry GO](https://www.aspecto.io/blog/opentelemetry-go-getting-started/#Install-OpenTelemetry-Go)
   - [Gin instrumentation: gin.Context](https://www.aspecto.io/blog/opentelemetry-go-getting-started/#Gin-instrumentation-gin-Context)
-- [Visualization with Jaeger and Aspecto](https://www.aspecto.io/blog/opentelemetry-go-getting-started/#Visualization-with-Jaeger-and-Aspecto)
+- [Visualization with Jaeger](https://www.aspecto.io/blog/opentelemetry-go-getting-started/#Visualization-with-Jaeger-and-Aspecto)
   - [OpenTelemetry Go and Jaeger Tracing](https://www.aspecto.io/blog/opentelemetry-go-getting-started/#OpenTelemetry-Go-and-Jaeger-Tracing-Export-traces-to-Jaeger)
-  - [OpenTelemetry Go and Aspecto](https://www.aspecto.io/blog/opentelemetry-go-getting-started/#Visualization-with-OpenTelemetry-Go-and-Aspecto)
 
 ## Intro to OpenTelemetry
 
@@ -145,7 +146,7 @@ We now have our todo app ready and instrumented. It’s time to utilize OpenTele
 
 For visualization, we’ll be using the open-source Jaeger Tracing and Aspecto.
 
-## Visualization with Jaeger and Aspecto
+## Visualization with Jaeger
 
 The setup to export traces to Jaeger or Aspecto is relatively similar. Follow along with the Jaeger setup, then switch to Aspecto by changing a few lines of code.
 
